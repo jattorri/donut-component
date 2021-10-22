@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Donut from './Donut.jsx';
+import { populationByRegions } from './data.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () =>{
+
+  const config = {
+    title:'The Population of Continents and Regions',
+    palette:'Soft Pastel',
+    dataSource: populationByRegions,
+    labelVisible:'true',
+    connectorVisible:'true',
+    exportEnabled:'true',
+    margin:0,
+    tooltipEnabled:'true',
+    formatType:'millions'
+
+    }
+
+  return(<Donut config={config}/>)
 }
+  
+
 
 export default App;
